@@ -3,6 +3,8 @@ import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { Genre } from "./Genre";
 import { Description } from "./Description";
+import "../css/AddMovie.css";
+
 
 export function AddMovie(): ReactElement {
 	return (
@@ -11,8 +13,10 @@ export function AddMovie(): ReactElement {
 			<Rating />
 			<Genre />
 			<Description />
-			<button>Clear</button>
-			<button>Add</button>
+			<div className="button-container">
+				<button>Clear</button>
+				<button>Add</button>
+			</div>
 		</main>
 	);
 }
