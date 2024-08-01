@@ -18,10 +18,16 @@ export function App() {
 
 	const handleClearMovie = (): void => setMovieData([]);
 
+	const handleDeleteMovie = (index: number): void => {
+		const movieDataCopy = movieData.slice(); // copy original array
+		movieDataCopy.splice(index, 1); // remove the index clicked
+		setMovieData(movieDataCopy); // set the data
+	};
+
 	return (
 		<div className="app">
 			<AddMovie onAddClicked={handleAddMovie} onClearClicked={handleClearMovie} />
-			<MovieList movieData={movieData} />
+			<MovieList movieData={movieData} onDeleteClicked={handleDeleteMovie} />
 		</div>
 	);
 }
