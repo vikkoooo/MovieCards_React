@@ -10,16 +10,17 @@ export interface MovieData {
 }
 
 export function App() {
-	const [movieData, setMovieData] = useState<MovieData>();
+	const [movieData, setMovieData] = useState<MovieData[]>([]);
 
 	const handleAddMovie = (data: MovieData) => {
-		setMovieData(data);
+		setMovieData(movieData.concat(data));
 	};
 
 	return (
 		<div className="app">
 			<AddMovie onAddClicked={handleAddMovie} />
-			{movieData && <MovieCard movieData={movieData} />}
+			{movieData.map((movie: MovieData, index: number) =>
+				(<MovieCard key={index} movieData={movie} />))}
 		</div>
 	);
 }
