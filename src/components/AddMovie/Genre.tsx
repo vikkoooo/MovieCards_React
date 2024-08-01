@@ -1,6 +1,11 @@
-import { ChangeEventHandler, ReactElement, useState } from "react";
+import { ChangeEventHandler, ReactElement } from "react";
 
-export function Genre(): ReactElement {
+interface GenreProps {
+	inputValue: string;
+	setInputValue: (value: string) => void;
+}
+
+export function Genre(prop: GenreProps): ReactElement {
 	const options = [
 		"Action",
 		"Drama",
@@ -8,17 +13,14 @@ export function Genre(): ReactElement {
 		"Thriller"
 	];
 
-	const [option, setOption] = useState<string>("");
-
 	const handleOnChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-		setOption(event.target.value);
-		console.log(`event.target.value: ${event.target.value}`);
+		prop.setInputValue(event.target.value);
 	};
 
 	return (
 		<div className="genre">
 			<p>Genre</p>
-			<select className="genre-field" value={option} onChange={handleOnChange}>
+			<select className="genre-field" value={prop.inputValue} onChange={handleOnChange}>
 				{options.map((option, index) => (
 					<option key={index} value={option}>
 						{option}
