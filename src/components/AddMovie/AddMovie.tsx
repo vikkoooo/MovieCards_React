@@ -1,4 +1,4 @@
-import { FormEventHandler, ReactElement, useState } from "react";
+import { FormEvent, ReactElement, useState } from "react";
 import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { Genre } from "./Genre";
@@ -9,26 +9,26 @@ import "../../css/AddMovie.css";
 export function AddMovie(): ReactElement {
 	const [title, setTitle] = useState<string>("");
 	const [rating, setRating] = useState<number>(3);
-	const [genre, setGenre] = useState<string>("");
+	const [genre, setGenre] = useState<string>("Action");
 	const [description, setDescription] = useState<string>("");
 
-	function clearClicked() {
+	function clearClicked(): void {
 		setTitle("");
 		setRating(3);
-		setGenre("");
+		setGenre("Action");
 		setDescription("");
 	};
 
-	function addClicked() {
+	function addClicked(): void {
 		console.log(`Title: ${title}`);
 		console.log(`Rating: ${rating}`);
 		console.log(`Genre: ${genre}`);
 		console.log(`Description: ${description}`);
 	};
 
-	const formSubmitted: FormEventHandler<HTMLFormElement> = (e) => {
-		e.preventDefault();
-	}
+	function formSubmitted(event: FormEvent<HTMLFormElement>): void {
+		event.preventDefault();
+	};
 
 	return (
 		<form className="add-movie" onSubmit={formSubmitted}>
