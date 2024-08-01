@@ -8,6 +8,7 @@ import "../../css/AddMovie.css";
 
 interface AddMovieProps {
 	onAddClicked: (data: MovieData) => void;
+	onClearClicked: () => void;
 }
 
 export function AddMovie(prop: AddMovieProps): ReactElement {
@@ -21,6 +22,7 @@ export function AddMovie(prop: AddMovieProps): ReactElement {
 		setRating(3);
 		setGenre("Action");
 		setDescription("");
+		prop.onClearClicked();
 	};
 
 	function formSubmitted(event: FormEvent<HTMLFormElement>): void {
