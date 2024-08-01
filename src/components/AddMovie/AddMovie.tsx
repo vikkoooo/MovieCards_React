@@ -3,17 +3,14 @@ import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { Genre } from "./Genre";
 import { Description } from "./Description";
-
+import { MovieData } from "../App";
 import "../../css/AddMovie.css";
 
-interface MovieData {
-	title: string;
-	rating: number;
-	genre: string;
-	description: string;
+interface AddMovieProps {
+	onAddClicked: (data: MovieData) => void;
 }
 
-export function AddMovie(): ReactElement {
+export function AddMovie(prop: AddMovieProps): ReactElement {
 	const [title, setTitle] = useState<string>("");
 	const [rating, setRating] = useState<number>(3);
 	const [genre, setGenre] = useState<string>("Action");
@@ -26,24 +23,19 @@ export function AddMovie(): ReactElement {
 		setDescription("");
 	};
 
-	function addClicked(): void {
-		console.log(`Title: ${title}`);
-		console.log(`Rating: ${rating}`);
-		console.log(`Genre: ${genre}`);
-		console.log(`Description: ${description}`);
+	function formSubmitted(event: FormEvent<HTMLFormElement>): void {
+		event.preventDefault();
+		addClicked();
+	};
 
+	function addClicked(): void {
 		const data: MovieData = {
 			title,
 			rating,
 			genre,
 			description
 		};
-		console.log(data);
-	};
-
-	function formSubmitted(event: FormEvent<HTMLFormElement>): void {
-		event.preventDefault();
-		addClicked();
+		prop.onAddClicked(data); // pass the data object into the function we have gotten from a higher level
 	};
 
 	return (
