@@ -6,6 +6,13 @@ import { Description } from "./Description";
 
 import "../../css/AddMovie.css";
 
+interface MovieData {
+	title: string;
+	rating: number;
+	genre: string;
+	description: string;
+}
+
 export function AddMovie(): ReactElement {
 	const [title, setTitle] = useState<string>("");
 	const [rating, setRating] = useState<number>(3);
@@ -24,10 +31,19 @@ export function AddMovie(): ReactElement {
 		console.log(`Rating: ${rating}`);
 		console.log(`Genre: ${genre}`);
 		console.log(`Description: ${description}`);
+
+		const data: MovieData = {
+			title,
+			rating,
+			genre,
+			description
+		};
+		console.log(data);
 	};
 
 	function formSubmitted(event: FormEvent<HTMLFormElement>): void {
 		event.preventDefault();
+		addClicked();
 	};
 
 	return (
@@ -38,7 +54,7 @@ export function AddMovie(): ReactElement {
 			<Description inputValue={description} setInputValue={setDescription} />
 			<div className="button-container">
 				<button type="reset" className="clear-button" onClick={clearClicked}>Clear</button>
-				<button type="submit" className="add-button" onClick={addClicked}>Add</button>
+				<button type="submit" className="add-button">Add</button>
 			</div>
 		</form>
 	);
