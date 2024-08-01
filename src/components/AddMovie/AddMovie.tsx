@@ -12,7 +12,12 @@ export function AddMovie(): ReactElement {
 	const [genre, setGenre] = useState<string>("");
 	const [description, setDescription] = useState<string>("");
 
-	function clearClicked() { };
+	function clearClicked() {
+		setTitle("");
+		setRating(3);
+		setGenre("");
+		setDescription("");
+	};
 
 	function addClicked() {
 		console.log(`Title: ${title}`);
@@ -32,7 +37,7 @@ export function AddMovie(): ReactElement {
 			<Genre inputValue={genre} setInputValue={setGenre} />
 			<Description inputValue={description} setInputValue={setDescription} />
 			<div className="button-container">
-				<button className="clear-button" onClick={clearClicked}>Clear</button>
+				<button type="reset" className="clear-button" onClick={clearClicked}>Clear</button>
 				<button type="submit" className="add-button" onClick={addClicked}>Add</button>
 			</div>
 		</form>
