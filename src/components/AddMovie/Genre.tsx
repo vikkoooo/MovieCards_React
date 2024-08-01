@@ -6,7 +6,7 @@ interface GenreProps {
 }
 
 export function Genre(prop: GenreProps): ReactElement {
-	const options = [
+	const options: string[] = [
 		"Action",
 		"Drama",
 		"Comedy",
