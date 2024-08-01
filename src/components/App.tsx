@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AddMovie } from "./AddMovie/AddMovie";
-import { MovieCard } from "./MovieCard/MovieCard";
+import { MovieList } from "./MovieCard/MovieList";
 
 export interface MovieData {
 	title: string;
@@ -19,8 +19,7 @@ export function App() {
 	return (
 		<div className="app">
 			<AddMovie onAddClicked={handleAddMovie} />
-			{movieData.map((movie: MovieData, index: number) =>
-				(<MovieCard key={index} movieData={movie} />))}
+			<MovieList movieData={movieData} />
 		</div>
 	);
 }
