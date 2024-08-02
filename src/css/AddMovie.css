@@ -1,11 +1,81 @@
-.container {
+.add-movie {
+	background-color: lightgrey;
 	display: flex;
 	flex-direction: column;
+	margin: 2rem auto;
+	max-width: 50vh;
+	padding: 1rem;
+	/* box shadow #9 + rounded */
+	/* https://getcssscan.com/css-box-shadow-examples */
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	border-radius: 0.5rem;
 }
 
 .title,
 .rating,
 .genre,
 .description {
+	background-color: lightgrey;
 	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.5rem;
+}
+
+.title p,
+.rating p,
+.genre p,
+.description p {
+	background-color: lightgrey;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.title-field,
+.rating-field,
+.genre-field,
+.description-field {
+	border: 1px solid darkgrey;
+	font-size: smaller;
+	padding: 0.5rem;
+}
+
+.rating-container {
+	align-items: center;
+	background-color: lightgrey;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.rating-field {
+	flex: 999;
+}
+
+.rating-value {
+	background-color: lightgrey;
+	flex: 1;
+	padding-left: 1rem;
+}
+
+.button-container {
+	background-color: lightgrey;
+	display: flex;
+	justify-content: space-between;
+}
+
+.clear-button,
+.add-button {
+	border: none;
+	border-radius: 4px;
+	color: whitesmoke;
+	cursor: pointer;
+	font-size: medium;
+	padding: 0.5rem 2rem;
+}
+
+.clear-button {
+	background-color: red;
+}
+
+.add-button {
+	background-color: green;
 }

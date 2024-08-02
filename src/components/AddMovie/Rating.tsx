@@ -13,10 +13,12 @@ export function Rating(prop: IRatingProps): ReactElement {
 	return (
 		<div className="rating">
 			<p>Rating</p>
-			<input type="range" className="rating-field" min="1" max="5" onChange={handleOnChange} value={prop.inputValue} />
-			<span>
-				{prop.inputValue}
-			</span>
+			<div className="rating-container">
+				<input type="range" className="rating-field" min="1" max="5" onChange={handleOnChange} value={prop.inputValue} />
+				<span className="rating-value">
+					{prop.inputValue}
+				</span>
+			</div>
 		</div>
 	);
 }
