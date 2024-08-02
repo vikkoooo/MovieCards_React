@@ -1,0 +1,32 @@
+.movie-list {
+	background-color: whitesmoke;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.movie-card {
+	background-color: lightgrey;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	box-sizing: border-box;
+	padding: 1rem;
+	width: 30%;
+}
+
+.movie-title,
+.movie-rating,
+.movie-genre {
+	background-color: lightgrey;
+	font-size: small;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.movie-description {
+	background-color: lightgrey;
+	font-size: smaller;
+	margin-bottom: 0.5rem;
+}

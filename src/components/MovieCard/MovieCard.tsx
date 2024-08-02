@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { IMovieData } from "../App";
+import "../../css/MovieCard.css";
 
 interface IMovieCardProps {
 	movieData: IMovieData;
