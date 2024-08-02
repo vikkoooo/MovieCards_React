@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import { MovieData } from "../App";
+import { IMovieData } from "../App";
 
-interface MovieCardProps {
-	movieData: MovieData;
+interface IMovieCardProps {
+	movieData: IMovieData;
 	onDeleteClicked: () => void;
 }
 
-export function MovieCard(prop: MovieCardProps): ReactElement {
+export function MovieCard(prop: IMovieCardProps): ReactElement {
 	return (
 		<article className="movie-card" onClick={prop.onDeleteClicked}>
 			<h1 className="movie-title">{prop.movieData.title}</h1>

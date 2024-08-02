@@ -1,11 +1,11 @@
 import { ChangeEventHandler, ReactElement } from "react";
 
-interface RatingProps {
+interface IRatingProps {
 	inputValue: number;
 	setInputValue: (value: number) => void;
 }
 
-export function Rating(prop: RatingProps): ReactElement {
+export function Rating(prop: IRatingProps): ReactElement {
 	const handleOnChange: ChangeEventHandler<HTMLInputElement> = (event) => {
 		prop.setInputValue(parseInt(event.target.value));
 	};

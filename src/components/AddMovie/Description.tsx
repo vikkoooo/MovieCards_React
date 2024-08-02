@@ -1,11 +1,11 @@
 import { ChangeEventHandler, ReactElement } from "react";
 
-interface DescriptionProps {
+interface IDescriptionProps {
 	inputValue: string;
 	setInputValue: (value: string) => void;
 }
 
-export function Description(prop: DescriptionProps): ReactElement {
+export function Description(prop: IDescriptionProps): ReactElement {
 	const handleOnChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
 		prop.setInputValue(event.target.value);
 	};

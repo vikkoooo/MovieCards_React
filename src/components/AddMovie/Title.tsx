@@ -1,11 +1,11 @@
 import { ChangeEventHandler, ReactElement } from "react";
 
-interface TitleProps {
+interface ITitleProps {
 	inputValue: string;
 	setInputValue: (value: string) => void;
 }
 
-export function Title(prop: TitleProps): ReactElement {
+export function Title(prop: ITitleProps): ReactElement {
 	const handleOnChange: ChangeEventHandler<HTMLInputElement> = (event) => {
 		prop.setInputValue(event.target.value);
 	};

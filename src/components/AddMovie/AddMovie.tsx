@@ -3,15 +3,15 @@ import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { Genre } from "./Genre";
 import { Description } from "./Description";
-import { MovieData } from "../App";
+import { IMovieData } from "../App";
 import "../../css/AddMovie.css";
 
-interface AddMovieProps {
-	onAddClicked: (data: MovieData) => void;
+interface IAddMovieProps {
+	onAddClicked: (data: IMovieData) => void;
 	onClearClicked: () => void;
 }
 
-export function AddMovie(prop: AddMovieProps): ReactElement {
+export function AddMovie(prop: IAddMovieProps): ReactElement {
 	const [title, setTitle] = useState<string>("");
 	const [rating, setRating] = useState<number>(3);
 	const [genre, setGenre] = useState<string>("Action");
@@ -31,7 +31,7 @@ export function AddMovie(prop: AddMovieProps): ReactElement {
 	};
 
 	function addClicked(): void {
-		const data: MovieData = {
+		const data: IMovieData = {
 			title,
 			rating,
 			genre,

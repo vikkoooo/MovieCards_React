@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AddMovie } from "./AddMovie/AddMovie";
 import { MovieList } from "./MovieCard/MovieList";
 
-export interface MovieData {
+export interface IMovieData {
 	title: string;
 	rating: number;
 	genre: string;
@@ -10,9 +10,9 @@ export interface MovieData {
 }
 
 export function App() {
-	const [movieData, setMovieData] = useState<MovieData[]>([]);
+	const [movieData, setMovieData] = useState<IMovieData[]>([]);
 
-	const handleAddMovie = (data: MovieData): void => {
+	const handleAddMovie = (data: IMovieData): void => {
 		setMovieData(movieData.concat(data));
 	};
 

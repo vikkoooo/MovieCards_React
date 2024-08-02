@@ -1,11 +1,11 @@
 import { ChangeEventHandler, ReactElement } from "react";
 
-interface GenreProps {
+interface IGenreProps {
 	inputValue: string;
 	setInputValue: (value: string) => void;
 }
 
-export function Genre(prop: GenreProps): ReactElement {
+export function Genre(prop: IGenreProps): ReactElement {
 	const options: string[] = [
 		"Action",
 		"Drama",
