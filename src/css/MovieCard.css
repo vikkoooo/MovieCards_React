@@ -21,12 +21,22 @@
 .movie-genre {
 	background-color: lightgrey;
 	font-size: small;
-	font-weight: 500;
-	margin-bottom: 0.5rem;
 }
 
 .movie-description {
 	background-color: lightgrey;
 	font-size: smaller;
+}
+
+.heading {
+	background-color: lightgrey;
+	font-size: small;
+	font-weight: 500;
+	padding-right: 1rem;
+}
+
+.row-container {
+	background-color: lightgrey;
+	display: flex;
 	margin-bottom: 0.5rem;
 }
